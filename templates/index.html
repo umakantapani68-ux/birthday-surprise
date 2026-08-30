@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>For Someone Special ❤️</title>
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+
+<!-- ======================================
+     BACKGROUND EFFECTS
+====================================== -->
+
+<div class="stars"></div>
+
+<div id="hearts"></div>
+
+<div id="balloons"></div>
+
+<div id="confetti"></div>
+
+<canvas id="fireworks"></canvas>
+
+
+<!-- ======================================
+     MUSIC
+====================================== -->
+
+<audio id="birthdayMusic" loop preload="auto">
+
+    <source
+        src="{{ url_for('static', filename='music/birthday.mp3') }}"
+        type="audio/mpeg">
+
+</audio>
+
+
+<!-- ======================================
+     MUSIC BUTTON
+====================================== -->
+
+<button id="musicButton"
+        class="music-button"
+        onclick="toggleMusic()">
+
+    🎵
+
+</button>
+
+
+<!-- ======================================
+     INTRO PAGE
+====================================== -->
+
+<section id="introPage"
+         class="page active">
+
+    <div class="intro-content">
+
+        <div class="eyebrow">
+            A LITTLE SURPRISE
+        </div>
+
+
+        <h1 class="cinematic-title">
+
+            I Made Something
+            <span>Special</span>
+            For You ❤️
+
+        </h1>
+
+
+        <p class="intro-description">
+
+            This isn't just a birthday wish...
+
+            <br>
+
+            It's a little journey through
+            some beautiful moments.
+
+        </p>
+
+
+        <button class="main-button"
+                onclick="startSurprise()">
+
+            <span>🎁</span>
+
+            Open Your Surprise
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- ======================================
+     COUNTDOWN PAGE
+====================================== -->
+
+<section id="countdownPage"
+         class="page">
+
+    <div class="countdown-content">
+
+        <div class="eyebrow">
+            GET READY
+        </div>
+
+        <p>
+            Your surprise begins in...
+        </p>
+
+
+        <div id="countNumber">
+            3
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ======================================
+     BIRTHDAY REVEAL
+====================================== -->
+
+<section id="birthdayPage"
+         class="page">
+
+    <div class="birthday-content">
+
+
+        <div class="birthday-eyebrow">
+
+            ✨ TODAY IS YOUR DAY ✨
+
+        </div>
+
+
+        <h1 class="birthday-title">
+
+            HAPPY
+
+            <span>
+                BIRTHDAY
+            </span>
+
+        </h1>
+
+
+        <!-- CHANGE THIS NAME -->
+
+        <div class="person-name">
+
+            Dear My Favorite Person ❤️
+
+        </div>
+
+
+        <p class="birthday-description">
+
+            Today isn't just another day.
+
+            <br>
+
+            Today is the day someone
+            incredibly special came into this world.
+
+        </p>
+
+
+        <button class="main-button"
+                onclick="showMemories()">
+
+            📸
+
+            See Our Memories
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- ======================================
+     MEMORIES PAGE
+====================================== -->
+
+<section id="memoriesPage"
+         class="page">
+
+    <div class="section-container">
+
+
+        <div class="eyebrow">
+            LITTLE MOMENTS
+        </div>
+
+
+        <h2>
+            Our Memories ❤️
+        </h2>
+
+
+        <p class="section-description">
+
+            Some moments last a second.
+
+            <br>
+
+            Some memories last forever.
+
+        </p>
+
+
+        <div class="gallery">
+
+
+            <!-- PHOTO 1 -->
+
+            <div class="photo-card">
+
+                <div class="photo-wrapper">
+
+                    <img
+                        src="{{ url_for('static', filename='images/photo1.jpg') }}"
+                        alt="Memory 1">
+
+                </div>
+
+                <p>
+                    🌸 Honestly,you're the only reason this picture looks good ❤️
+                </p>
+
+            </div>
+
+
+            <!-- PHOTO 2 -->
+
+            <div class="photo-card">
+
+                <div class="photo-wrapper">
+
+                    <img
+                        src="{{ url_for('static', filename='images/photo2.jpg') }}"
+                        alt="Memory 2">
+
+                </div>
+
+                <p>
+                    ✨ Every  moment is  special when you're in it ✨
+                </p>
+
+            </div>
+
+
+            <!-- PHOTO 3 -->
+
+            <div class="photo-card">
+
+                <div class="photo-wrapper">
+
+                    <img
+                        src="{{ url_for('static', filename='images/photo3.jpg') }}"
+                        alt="Memory 3">
+
+                </div>
+
+                <p>
+                    🌿 somehow , you always find a way to turn the ordinary into pure fun 💖
+             
+                </p>
+
+            </div>
+
+
+            <!-- PHOTO 4 -->
+
+            <div class="photo-card">
+
+                <div class="photo-wrapper">
+
+                    <img
+                        src="{{ url_for('static', filename='images/photo4.jpg') }}"
+                        alt="Memory 4">
+
+                </div>
+
+                <p>
+                    🥰 “That smile deserves its own little universe.” ✨
+                </p>
+
+            </div>
+
+
+            <!-- PHOTO 5 -->
+
+            <div class="photo-card">
+
+                <div class="photo-wrapper">
+
+                    <img
+                        src="{{ url_for('static', filename='images/photo5.jpg') }}"
+                        alt="Memory 5">
+
+                </div>
+
+                <p>
+                    💕 the art of doing absolutely nothing , beutifully✨
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <button class="main-button"
+                onclick="showLetter()">
+
+            💌
+
+            Read My Message
+
+        </button>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ======================================
+     LETTER PAGE
+====================================== -->
+
+<section id="letterPage"
+         class="page">
+
+    <div class="letter-container">
+
+
+        <div class="eyebrow">
+            FROM MY HEART
+        </div>
+
+
+        <h2>
+            A Little Message 💌
+        </h2>
+
+
+        <div class="letter-paper">
+
+            <div class="letter-decoration">
+                ✦
+            </div>
+
+
+            <p id="typewriter"></p>
+
+
+            <div class="cursor"></div>
+
+        </div>
+
+
+        <button class="main-button"
+                onclick="showGift()">
+
+            🎁
+
+            One More Surprise
+
+        </button>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ======================================
+     GIFT PAGE
+====================================== -->
+
+<section id="giftPage"
+         class="page">
+
+    <div class="gift-container">
+
+
+        <div class="eyebrow">
+            ONE LAST THING
+        </div>
+
+
+        <h2>
+            I Have A Gift For You 🎁
+        </h2>
+
+
+        <p class="gift-instruction">
+
+            Tap the gift box to open it.
+
+        </p>
+
+
+        <div class="gift-box"
+             onclick="openGift()">
+
+
+            <div class="gift-lid">
+
+                <div class="lid-ribbon"></div>
+
+            </div>
+
+
+            <div class="gift-body">
+
+                <div class="vertical-ribbon"></div>
+
+                <div class="horizontal-ribbon"></div>
+
+            </div>
+
+
+            <div class="gift-bow">
+
+                <div class="bow-left"></div>
+
+                <div class="bow-right"></div>
+
+                <div class="bow-center"></div>
+
+            </div>
+
+
+        </div>
+
+
+        <p class="tap-text">
+            ✨ Tap me ✨
+        </p>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ======================================
+     FINAL PAGE
+====================================== -->
+
+<section id="finalPage"
+         class="page">
+
+    <div class="final-container">
+
+
+        <div class="final-heart">
+            ❤️
+        </div>
+
+
+        <div class="eyebrow">
+            THIS IS FOR YOU
+        </div>
+
+
+        <h1 class="final-title">
+
+            You Are
+
+            <span>
+                Special
+            </span>
+
+        </h1>
+
+
+        <div class="final-divider">
+            ✦ ✦ ✦
+        </div>
+
+
+        <p class="final-message">
+
+            No matter where life takes you,
+            never forget how amazing you are.
+
+            <br><br>
+
+            I hope this new year of your life
+            brings you happiness,
+            success, peace and countless
+            beautiful memories.
+
+            <br><br>
+
+            Keep smiling.
+
+            <br>
+
+            Keep shining.
+
+            <br>
+
+            And always keep being you.
+
+            <br><br>
+
+            <strong>
+                Happy Birthday ❤️
+            </strong>
+
+        </p>
+
+
+        <div class="firework-symbols">
+
+            ✨ 🎆 ✨
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<script
+    src="{{ url_for('static', filename='script.js') }}">
+</script>
+
+
+</body>
+
+</html>
